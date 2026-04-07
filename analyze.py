@@ -30,7 +30,7 @@ def top_authors(df, n=10):
     df_exploded = df.explode("authors")
     print(df_exploded["authors"].value_counts().head(n))
 
-def build_collaboration_graph(df, limit=50000):
+def build_collaboration_graph(df, limit=10000):
     G = nx.Graph()
     for _, row in df.head(limit).iterrows():
         authors = row["authors"]
